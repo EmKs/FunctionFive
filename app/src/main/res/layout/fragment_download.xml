@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scriptEntity"
+            type="cn.qinguide.f5web.common.entity.ScriptEntity" />
+
+        <variable
+            name="downloadProxy"
+            type="cn.qinguide.f5web.via.repertory.proxy.DownloadProxy" />
+
+        <variable
+            name="fragment"
+            type="com.ljy.devring.base.fragment.IBaseFragment" />
+    </data>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh_download"
+        style="@style/MatchParentLayout">
+
+        <android.support.design.widget.CoordinatorLayout style="@style/MatchParentLayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_download"
+                style="@style/MatchParentLayout"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+            <LinearLayout
+                android:id="@+id/layout_bottom_sheet_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:orientation="vertical"
+                app:behavior_hideable="true"
+                app:behavior_peekHeight="0dp"
+                app:layout_behavior="@string/bottom_sheet_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{scriptEntity.scriptName}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/ic_launcher_round"
+                        app:setNetImage="@{scriptEntity.iconUrl}" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="24dp"
+                    android:paddingBottom="12dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@{@string/format_author(scriptEntity.author)}"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"
+                        android:text="@{@string/format_description(scriptEntity.scriptDescription)}"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="3dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/textView_createTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:gravity="bottom"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:formatCreateTime="@{scriptEntity.createTime}" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/textView_updateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@+id/textView_createTime"
+                            android:gravity="top"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:formatUpdateTime="@{scriptEntity.updateTime}" />
+
+
+                        <android.support.v7.widget.AppCompatButton
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="3dp"
+                            android:onClick="@{(view)->downloadProxy.onClicked(view,scriptEntity)}"
+                            android:text="@string/downloads"
+                            android:textColor="@color/white" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</layout>

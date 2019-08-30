@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scriptEntity"
+            type="cn.qinguide.f5web.common.entity.ScriptEntity" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/HeightWrapLayout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/bg_item"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:orientation="vertical"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="2dp">
+
+        <LinearLayout
+            style="@style/HeightWrapLayout"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                app:setNetImage="@{scriptEntity.iconUrl}" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/HeightWrapLayout"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{scriptEntity.scriptName}"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textIsSelectable="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/description"
+                    style="@style/HeightWrapLayout"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{scriptEntity.scriptDescription}"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textIsSelectable="false"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imageView_download"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="6dp"
+
+                android:src="@drawable/ic_download_item" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">F5</string>
+    <string name="functionFive_situation">F5 活动情况：%s</string>
+    <string name="functionFive_status">F5 状态</string>
+
+    <string name="f5web">F5模块</string>
+    <string name="editor_script">编辑脚本</string>
+    <string name="downloads">下载脚本</string>
+    <string name="save_script">已保存%s脚本</string>
+    <string name="upload">上传分享</string>
+    <string name="inject">注入程序</string>
+    <string name="support">捐赠支持</string>
+    <string name="about">关于</string>
+    <string name="tourist">游客</string>
+    <string name="login_tips">登录后可以发布脚本</string>
+    <string name="switch_enabled">请先启用</string>
+    <string name="download_success">下载完成</string>
+    <string name="download_error">下载失败</string>
+
+    <string name="xposed_disabled">模块未激活，无法启用</string>
+    <string name="create_script">创建脚本</string>
+    <string name="add_inject">添加应用</string>
+
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+
+    <string name="description">F5-JavaScript脚本注入器</string>
+    <string name="absolutely_empty">空空如也~</string>
+    <string name="search">搜索</string>
+    <string name="sort">排序</string>
+    <string name="recycler_empty">赶紧添加点什么吧 :)</string>
+    <string name="set_inject_plan">请选择注入方案</string>
+    <string name="tips_success">已激活</string>
+    <string name="tips_warning">未启用</string>
+    <string name="tips_error">未激活</string>
+    <string name="cancel">取消</string>
+    <string name="format_author">作者：%s</string>
+    <string name="format_description">简介：%s</string>
+    <string name="get_app_install_error">获取应用列表失败</string>
+    <string name="create_time">发布时间：%s</string>
+    <string name="update_time">更新时间：%s</string>
+
+    <string-array name="plan">
+        <item>Chromium系列</item>
+        <item>X5内核-TBS</item>
+    </string-array>
+</resources>

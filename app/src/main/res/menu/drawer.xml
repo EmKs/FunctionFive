@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <group
+        android:id="@+id/main_items"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_model"
+            android:icon="@drawable/ic_android"
+            android:title="@string/f5web" />
+        <item
+            android:id="@+id/nav_item_upload"
+            android:icon="@drawable/ic_upload"
+            android:title="@string/upload" />
+        <item
+            android:id="@+id/nav_item_downloads"
+            android:icon="@drawable/ic_downloads"
+            android:title="@string/downloads" />
+        <item
+            android:id="@+id/nav_item_inject"
+            android:icon="@drawable/ic_debug"
+            android:title="@string/inject" />
+    </group>
+    <group
+        android:id="@+id/option_items"
+        android:checkableBehavior="all">
+        <item
+            android:id="@+id/nav_item_support"
+            android:icon="@drawable/ic_support"
+            android:title="@string/support" />
+        <item
+            android:id="@+id/nav_item_about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about" />
+    </group>
+
+</menu>
